@@ -6,8 +6,8 @@
   "description": "NestJS + Mercurius + Drizzle + Effect backend.",
   "scripts": {
     "build": "tsc -p tsconfig.build.json && node scripts/copy-assets.mjs",
-    "start": "tsx --env-file=.env src/main.ts",
-    "start:dev": "tsx --env-file=.env watch src/main.ts",
+    "start": "tsx --env-file=../../.env src/main.ts",
+    "start:dev": "tsx --env-file=../../.env watch src/main.ts",
     "start:prod": "node dist/main.js",
     "typecheck": "tsc -p tsconfig.json --noEmit",
     "lint": "eslint \"src/**/*.ts\" \"test/**/*.ts\" --fix",
@@ -17,11 +17,11 @@
     "db:generate": "drizzle-kit generate",
     "db:migrate": "drizzle-kit migrate",
     "db:push": "drizzle-kit push",
-    "seed:admin": "tsx --env-file=.env scripts/seed-admin.ts",
-    "load:auth": "tsx --env-file=.env scripts/load-auth.ts",
-    "test:e2e": "tsx --env-file=.env scripts/e2e-auth.ts",
-    "test:e2e:users": "tsx --env-file=.env scripts/e2e-users.ts",
-    "test:e2e:pokemon": "tsx --env-file=.env scripts/e2e-pokemon.ts"
+    "seed:admin": "tsx --env-file=../../.env scripts/seed-admin.ts",
+    "load:auth": "tsx --env-file=../../.env scripts/load-auth.ts",
+    "test:e2e": "tsx --env-file=../../.env scripts/e2e-auth.ts",
+    "test:e2e:users": "tsx --env-file=../../.env scripts/e2e-users.ts",
+    "test:e2e:pokemon": "tsx --env-file=../../.env scripts/e2e-pokemon.ts"
   },
   "author": "Sliden101",
   "license": "MIT",
