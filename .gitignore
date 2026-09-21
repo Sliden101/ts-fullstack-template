@@ -2,9 +2,12 @@
 node_modules/
 
 # Build output
+# Keep `dist/` unscoped so app/package build output is ignored, but scope
+# `build/` and `lib/` to the repo root: source folders may legitimately be
+# named `lib` (e.g. apps/client/src/lib).
 dist/
-build/
-lib/
+/build/
+/lib/
 
 # TypeScript build info
 *.tsbuildinfo
