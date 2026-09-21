@@ -1,0 +1,21 @@
+scalar Date
+scalar Time
+
+type PingResult {
+  serverTime: Date!
+  uptimeSeconds: Float!
+  processingTimeMs: Float!
+  nonce: String
+}
+
+type Query {
+  health: String!
+  ping(nonce: String): PingResult!
+}
+
+# Base mutation root. Feature modules attach mutations with
+# `extend type Mutation { ... }`. GraphQL requires at least one field, so a
+# placeholder is kept here until the application defines its own.
+type Mutation {
+  _: Boolean
+}

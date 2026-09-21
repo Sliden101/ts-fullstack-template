@@ -1,0 +1,48 @@
+# Dependencies
+node_modules/
+
+# Build output
+dist/
+build/
+lib/
+
+# TypeScript build info
+*.tsbuildinfo
+
+# Vite cache
+.vite/
+
+# TanStack Router cache
+.tanstack/
+
+# Test coverage
+coverage/
+coverage-reports/
+spec-reports/
+test-reports/
+
+# Environment files
+.env
+.env.local
+.env.*.local
+
+# IDE and editor state
+.vscode/
+.idea/
+docs/.obsidian/
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+npm-debug.log*
+
+# Local scratch and agent tooling
+.scratch/
+.agents/
+skills-lock.json
+
+# Docker volumes
+docker-data/

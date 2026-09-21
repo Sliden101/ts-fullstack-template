@@ -1,0 +1,37 @@
+{
+  "name": "ts-fullstack-template",
+  "version": "0.0.0",
+  "private": true,
+  "description": "Reusable full-stack TypeScript monorepo template: NestJS + Mercurius + Drizzle + Effect backend, React + TanStack + Tailwind client.",
+  "license": "MIT",
+  "workspaces": [
+    "apps/*",
+    "packages/*"
+  ],
+  "scripts": {
+    "dev": "concurrently -n contracts,server,client -c blue,green,magenta \"npm:dev:contracts\" \"npm:dev:server\" \"npm:dev:client\"",
+    "dev:contracts": "npm run dev -w @repo/contracts",
+    "dev:server": "npm run start:dev -w @repo/server",
+    "dev:client": "npm run dev -w @repo/client",
+    "build": "npm run build -w @repo/contracts && npm run build -w @repo/server && npm run build -w @repo/client",
+    "build:contracts": "npm run build -w @repo/contracts",
+    "lint": "npm run lint -w @repo/server && npm run lint -w @repo/client",
+    "typecheck": "npm run build -w @repo/contracts && npm run typecheck -w @repo/server && npm run typecheck -w @repo/client",
+    "test": "npm run test -w @repo/contracts && npm run test -w @repo/server && npm run test -w @repo/client",
+    "format": "prettier --write \"**/*.{ts,tsx,js,mjs,json,md,yml,yaml}\"",
+    "db:generate": "npm run db:generate -w @repo/server",
+    "db:migrate": "npm run db:migrate -w @repo/server",
+    "db:push": "npm run db:push -w @repo/server",
+    "seed:admin": "npm run seed:admin -w @repo/server",
+    "init": "node scripts/init-template.mjs",
+    "compose:up": "docker compose up --build",
+    "compose:down": "docker compose down -v"
+  },
+  "devDependencies": {
+    "concurrently": "^9.2.1",
+    "prettier": "^3.6.2"
+  },
+  "engines": {
+    "node": ">=22"
+  }
+}

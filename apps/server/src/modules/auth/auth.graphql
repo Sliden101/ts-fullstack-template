@@ -1,0 +1,27 @@
+type AuthUser {
+  id: ID!
+  name: String!
+  email: String!
+  role: String!
+  firstName: String
+  lastName: String
+  image: String
+}
+
+type AuthSessionInfo {
+  id: ID!
+  expiresAt: Date!
+  createdAt: Date!
+  ipAddress: String
+  userAgent: String
+  isCurrent: Boolean!
+}
+
+extend type Query {
+  me: AuthUser
+  mySessions: [AuthSessionInfo!]!
+}
+
+extend type Mutation {
+  revokeSession(sessionId: ID!): Boolean!
+}

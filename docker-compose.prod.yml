@@ -1,0 +1,18 @@
+# Production overrides. Use with:
+#   docker compose -f docker-compose.yml -f docker-compose.prod.yml up -d --build
+#
+# Provide BETTER_AUTH_SECRET, ADMIN_EMAIL, ADMIN_PASSWORD, and a real
+# DATABASE_URL via the environment or a .env file. Do not use the defaults.
+
+services:
+  db:
+    ports: []
+
+  server:
+    restart: unless-stopped
+    environment:
+      NODE_ENV: production
+      LOG_LEVEL: ${LOG_LEVEL:-warn}
+
+  client:
+    restart: unless-stopped

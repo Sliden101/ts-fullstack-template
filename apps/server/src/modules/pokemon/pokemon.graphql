@@ -1,0 +1,23 @@
+type Pokemon {
+  id: Int!
+  name: String!
+  height: Int!
+  weight: Int!
+  types: [String!]!
+  spriteUrl: String
+}
+
+type PokemonListItem {
+  name: String!
+  url: String!
+}
+
+type PokemonPage {
+  count: Int!
+  items: [PokemonListItem!]!
+}
+
+extend type Query {
+  pokemon(name: String!): Pokemon
+  pokemons(limit: Int, offset: Int): PokemonPage!
+}

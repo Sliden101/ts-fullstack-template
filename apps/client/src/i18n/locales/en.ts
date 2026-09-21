@@ -1,0 +1,116 @@
+export const en = {
+  common: {
+    save: 'Save',
+    cancel: 'Cancel',
+    delete: 'Delete',
+    search: 'Search...',
+    active: 'Active',
+    restricted: 'Restricted',
+    restrictedAccess: 'Restricted Access',
+    accessDenied: 'Access Denied',
+    close: 'Close',
+    closeModal: 'Close modal',
+    signOut: 'Sign out',
+    openSidebar: 'Open Navigation Menu',
+    copy: 'Copy',
+    copied: 'Copied!',
+    notProvided: 'Not provided',
+    all: 'All',
+    of: 'of',
+    avatar: 'Avatar',
+  },
+  brand: {
+    productName: 'Fullstack Template',
+    systemTitle: 'FULLSTACK',
+    systemTagline: 'Fullstack Template',
+  },
+  nav: {
+    groups: {
+      general: 'GENERAL',
+      resources: 'RESOURCES',
+      administration: 'ADMINISTRATION',
+    },
+    items: {
+      dashboard: 'Dashboard',
+      pokemon: 'Pokemon',
+      users: 'Users & Roles',
+    },
+  },
+  signIn: {
+    welcomeBack: 'Welcome back',
+    welcomeSubtitle: 'Enter your credentials to access the system',
+    email: 'Email',
+    password: 'Password',
+    required: '*',
+    signIn: 'Sign In',
+    signingIn: 'Signing in...',
+    togglePassword: 'Toggle password visibility',
+    needAccount: 'Need an account?',
+    contactSupport: 'Contact support',
+    emailRequired: 'Email is required',
+    emailInvalid: 'Enter a valid email address (e.g. name@example.com)',
+    passwordRequired: 'Password is required',
+    passwordTooShort: 'Password must be at least 8 characters',
+    signInFailed: 'Sign-in failed',
+    invalidCredentials: 'Invalid email or password. Please try again.',
+    signInError: 'Something went wrong. Please try again.',
+    brandSubtitle: 'Fullstack Starter',
+    brandHeading: 'Sign in to manage your application.',
+    brandDescription: 'A typed client, a GraphQL API, and shared contracts — all in one repo.',
+    brandTrust: 'Trusted by your team',
+  },
+  list: {
+    countLabel: 'results',
+    showing: 'showing',
+    clearAllFilters: 'Clear all filters',
+    clearSearch: 'Clear search',
+    searchPlaceholder: 'Search...',
+    route: 'Group',
+    filters: 'Filters',
+    readOnlyLocked: 'Locked (Read-only access)',
+  },
+  status: {
+    active: 'Active',
+    suspended: 'Suspended',
+    pending: 'Pending',
+    inactive: 'Inactive',
+  },
+  errors: {
+    pokemon_not_found: 'No pokemon matches that name.',
+    upstream_unavailable: 'The upstream service is unavailable. Try again shortly.',
+    validation_error: 'Please check your input and try again.',
+    unknown: 'Something went wrong. Please try again.',
+  },
+  photoUpload: {
+    label: 'Image',
+    optional: '(Optional)',
+    uploadButton: 'Upload Photo',
+    changeButton: 'Change Photo',
+    removeButton: 'Remove Photo',
+    dragDropText: 'Drag & drop image here or click to browse',
+    supportedFormats: 'JPG, PNG, WebP up to 5MB',
+    fileSizeError: 'File size exceeds 5MB limit',
+    fileTypeError: 'Please select a valid image file (JPG, PNG, WebP)',
+    enterUrl: 'Or paste image URL',
+    urlPlaceholder: 'https://example.com/photo.jpg',
+    imageSelected: 'Image Selected',
+    uploadedFromDevice: 'Uploaded from device',
+    apply: 'Apply',
+    readError: 'Failed to read image file',
+  },
+  unsavedChanges: {
+    title: 'Discard Unsaved Changes?',
+    description:
+      'You have unsaved changes in this form. If you leave now, all your unsaved modifications will be permanently lost.',
+    keepEditing: 'Keep Editing',
+    discard: 'Discard Changes',
+  },
+};
+
+type DeepString<T> = {
+  readonly [K in keyof T]: T[K] extends Record<string, unknown>
+    ? DeepString<T[K]>
+    : string;
+};
+
+export type TranslationSchema = DeepString<typeof en>;
